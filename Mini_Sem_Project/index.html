@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini GPS Navigation System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🗺️ Mini GPS Navigation System</h1>
+            <p>Find shortest route using Dijkstra's Algorithm</p>
+        </header>
+
+        <div class="main-content">
+            <aside class="control-panel">
+                <h2>🎮 Navigation Controls</h2>
+                
+                <div class="form-group">
+                    <label for="startLocation">📍 Start Location:</label>
+                    <select id="startLocation">
+                        <option value="">-- Select Start --</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="endLocation">🎯 Destination:</label>
+                    <select id="endLocation">
+                        <option value="">-- Select Destination --</option>
+                    </select>
+                </div>
+
+                <div class="button-group">
+                    <button id="findRouteBtn" class="btn btn-primary">
+                        🔍 Find Route
+                    </button>
+                    <button id="animateBtn" class="btn btn-secondary" disabled>
+                        ▶️ Show Step-by-Step
+                    </button>
+                    <button id="resetBtn" class="btn btn-danger">
+                        ↻ Reset
+                    </button>
+                </div>
+
+                <div id="resultsPanel" class="results-panel hidden">
+                    <h3>📋 Route Information</h3>
+                    <div class="result-item">
+                        <span>Start:</span>
+                        <strong id="resultStart">-</strong>
+                    </div>
+                    <div class="result-item">
+                        <span>Destination:</span>
+                        <strong id="resultEnd">-</strong>
+                    </div>
+                    <div class="result-item">
+                        <span>🛣️ Route:</span>
+                        <strong id="resultPath">-</strong>
+                    </div>
+                    <div class="result-item highlight">
+                        <span>📏 Total Distance:</span>
+                        <strong id="resultDistance">-</strong>
+                    </div>
+                </div>
+
+                <div id="savedRoute" class="saved-route hidden">
+                    <h4>💾 Last Saved Route</h4>
+                    <p id="savedRouteText">-</p>
+                </div>
+
+                <div class="legend">
+                    <h4>🎨 Legend</h4>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #4ECDC4;"></div>
+                        <span>Start Node</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #FFD700;"></div>
+                        <span>Visited Nodes</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #FF6B6B;"></div>
+                        <span>Destination</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #2ECC71;"></div>
+                        <span>Shortest Path</span>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="visualization-area">
+                <canvas id="graphCanvas"></canvas>
+                <div id="animationStatus" class="animation-status hidden">
+                    <span id="stepInfo">Step 1 / 0</span>
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <footer>
+        <p>✨ Built with vanilla JavaScript | Dijkstra's Algorithm Visualization</p>
+        <p><small>All routes are calculated using Dijkstra's shortest path algorithm</small></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

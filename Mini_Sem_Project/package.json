@@ -1,0 +1,17 @@
+{
+  "name": "mini-gps-navigation",
+  "version": "1.0.0",
+  "description": "Mini GPS Navigation System using Dijkstra's Algorithm",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "echo \"Static site: no build step required\"",
+    "deploy": "vercel"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  },
+  "keywords": ["gps", "dijkstra", "navigation", "algorithm"],
+  "author": "Your Name",
+  "license": "MIT"
+}
